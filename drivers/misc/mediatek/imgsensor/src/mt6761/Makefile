@@ -38,14 +38,15 @@ obj-y				+= ../common/$(COMMON_VERSION)/imgsensor_sensor_list.o
 define FILTER_DRV
 ifeq ($(wildcard $(IMGSENSOR_DRIVER_PATH)/$(MTK_PLATFORM)/camera_project/$(ARCH_MTK_PROJECT)/$(1)),)
 ifeq ($(wildcard $(IMGSENSOR_DRIVER_PATH)/$(MTK_PLATFORM)/$(1)),)
-common_drv = $(IMGSENSOR_DRIVER_PATH)/common/$(COMMON_VERSION)/$(1)/
+common_drv += $(IMGSENSOR_DRIVER_PATH)/common/$(COMMON_VERSION)/$(1)/
 else
 platform_drv += $(1)/
 endif
 else
-project_drv += ./camera_project/$(ARCH_MTK_PROJECT)/$(1)/
+project_drv += $(IMGSENSOR_DRIVER_PATH)/camera_project/$(ARCH_MTK_PROJECT)/$(1)/
 endif
 endef
+
 
 
 $(foreach drv,$(subst $\",,$(CONFIG_CUSTOM_KERNEL_IMGSENSOR)),$(eval $(call FILTER_DRV,$(drv))))
