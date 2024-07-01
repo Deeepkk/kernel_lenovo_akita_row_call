@@ -37,8 +37,8 @@ obj-y				+= ../common/$(COMMON_VERSION)/imgsensor_sensor_list.o
 
 define FILTER_DRV
 ifeq ($(wildcard $(IMGSENSOR_DRIVER_PATH)/$(MTK_PLATFORM)/camera_project/$(ARCH_MTK_PROJECT)/$(1)),)
-ifeq ($(wildcard $(IMGSENSOR_DRIVER_PATH)/$(MTK_PLATFORM)/$(1)),)
-common_drv += ../common/$(COMMON_VERSION)/$(1)/
+ifeq ($(wildcard $(IMGSENSOR_DRIVER_PATH)/$(1)),)
+common_drv += common/$(COMMON_VERSION)/$(1)/
 else
 platform_drv += $(1)/
 endif
