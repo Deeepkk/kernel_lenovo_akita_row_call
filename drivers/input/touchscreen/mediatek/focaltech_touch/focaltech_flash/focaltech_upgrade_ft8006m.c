@@ -38,7 +38,7 @@
 * Global variable or extern global variabls/functions
 *****************************************************************************/
 u8 pb_file_ft8006m[] = {
-#include "$(srctree)/drivers/input/touchscreen/mediatek/focaltech_touch/include/pramboot/FT8006M_Pramboot_V1.6_20180426_le.i"
+#include "../FT8006M_Pramboot_V1.6_20180426_le.i"
 };
 
 /*****************************************************************************
