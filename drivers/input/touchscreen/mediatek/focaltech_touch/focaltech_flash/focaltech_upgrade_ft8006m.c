@@ -38,7 +38,7 @@
 * Global variable or extern global variabls/functions
 *****************************************************************************/
 u8 pb_file_ft8006m[] = {
-#include "../include/pramboot/FT8006M_Pramboot_V1.6_20180426_le.i"
+#include "include/pramboot/FT8006M_Pramboot_V1.6_20180426_le.i"
 };
 
 /*****************************************************************************
